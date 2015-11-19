@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>GitHub Markdown Preview for TextMate1</string>
+	<key>ordering</key>
+	<array>
+		<string>5AA7D049-695F-4DF5-B312-2732BEBA76D9</string>
+	</array>
+	<key>uuid</key>
+	<string>6CECCC7F-18BE-4A5D-91ED-87A49B34BF49</string>
+</dict>
+</plist>
