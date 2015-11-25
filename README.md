@@ -13,6 +13,13 @@ Then install require `gems`:
 
     gem install github-markup redcarpet kramdown
 
+Also, for `rst` file support, you need python and `docutils` package. Please
+install `python` from `brew`
+
+    brew install python     # this will install pyton to /usr/local/bin/
+                            # this path will be added to $PATH
+    pip install docutils
+
 ## Installation
 
     cd "~/Library/Application Support/TextMate/Bundles/"
@@ -43,6 +50,10 @@ this mini bundle :)
 ---
 
 ## Change Log
+
+**2015-11-25**
+
+* Added: `.rst` file support!
 
 **2015-11-19**
 

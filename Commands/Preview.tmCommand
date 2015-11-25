@@ -6,6 +6,9 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+
+export PATH="/usr/local/bin/:$PATH"
+
 html_header "Markdown Preview" "${TM_FILENAME:-}"
 
 if [[ -f "$TM_FILEPATH" ]]; then
@@ -42,7 +45,8 @@ rescue LoadError =&gt; err
 end
 '
 
-html_footer</string>
+html_footer
+</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
