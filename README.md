@@ -54,6 +54,7 @@ this mini bundle :)
 **2015-11-25**
 
 * Added: `.rst` file support!
+* Removed: Buggy `scroll_to` thing. Will work on it later
 
 **2015-11-19**
 

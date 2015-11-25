@@ -22,13 +22,7 @@ begin
   lines = html.split("\n")
   current_line_number = ENV["TM_LINE_NUMBER"].to_i
   n = [current_line_number, lines.length].min
-  
-  if current_line_number &gt;= 26
-    n = n + 20
-  else
-    n = n - 7
-  end
-  
+
   while n &gt; 0 &amp;&amp; !lines[n].match(/&lt;(h\d|p|ul|li|blockquote|pre|div|img|code|table|tr)&gt;/i)
     n -= 1
   end
