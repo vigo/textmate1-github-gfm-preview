@@ -5,15 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
-
-export PATH="/usr/local/bin/:$PATH"
-
-html_header "Markdown Preview" "${TM_FILENAME:-}"
-
-if [[ -f "$TM_FILEPATH" ]]; then
-  echo "&lt;base href='tm-file://${TM_FILEPATH// /%20}'&gt;"
-fi
+	<string>echo "&lt;html&gt;&lt;head&gt;&lt;title&gt;$TM_FILENAME&lt;/title&gt;&lt;link rel='stylesheet' href='file://$TM_BUNDLE_PATH/style.css'&gt;&lt;/head&gt;&lt;body&gt;&lt;div class='github-gfm'&gt;"
 
 $HOME/.rbenv/shims/ruby -e '
 begin
@@ -21,26 +13,13 @@ begin
   html = GitHub::Markup.render(ENV["TM_FILENAME"], File.read(ENV["TM_FILEPATH"]))
   lines = html.split("\n")
   current_line_number = ENV["TM_LINE_NUMBER"].to_i
-  n = [current_line_number, lines.length].min
-
-  while n &gt; 0 &amp;&amp; !lines[n].match(/&lt;(h\d|p|ul|li|blockquote|pre|div|img|code|table|tr)&gt;/i)
-    n -= 1
-  end
-
-  if n &gt; 0 &amp;&amp; m = lines[n].match(/&lt;(h\d|p|ul|li|blockquote|pre|div|img|code|table|tr)&gt;(.*)$/i)
-    lines[n] = "&lt;#{m[1]} id=\"scroll_to_here\" &gt;#{m[2]}"
-  end
-
   puts lines.join("\n")
-  puts "\n&lt;script&gt;window.location.hash = \"scroll_to_here\";&lt;/script&gt;"
-
 rescue LoadError =&gt; err
   puts "Error"
 end
 '
 
-html_footer
-</string>
+echo '&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

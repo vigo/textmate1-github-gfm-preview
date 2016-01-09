@@ -24,13 +24,102 @@ install `python` from `brew`
 
     cd "~/Library/Application Support/TextMate/Bundles/"
     git clone https://github.com/vigo/textmate1-github-gfm-preview.git
-    ln -s ~/Library/Application\ Support/TextMate/Bundles/textmate1-github-gfm-preview.tmbundle/WebPreview/github-gfm ~/Library/Application\ Support/TextMate/Themes/WebPreview/
 
 Now you can hit `kntrl+alt+cmd+p`
+
+## Features
+
+### Fenced Code Blocks
+
+    ```ruby
+    require 'redcarpet'
+    markdown = Redcarpet.new("Hello World!")
+    puts markdown.to_html
+    ```
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
+### Tables: Example 1
+
+    | First Header  | Second Header |
+    | ------------- | ------------- |
+    | Content Cell  | Content Cell  |
+    | Content Cell  | Content Cell  |
+
+Output:
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+***
+
+### Tables: Example 2
+
+    | Name          | Description                 |
+    | ------------- | --------------------------- |
+    | Help          | ~~Display the~~ help window.|
+    | Close         | _Closes_ a window           |
+
+Output:
+
+| Name          | Description                 |
+| ------------- | --------------------------- |
+| Help          | ~~Display the~~ help window.|
+| Close         | _Closes_ a window           |
+
+***
+
+### Tables: Example 3
+
+    | Left-Aligned  | Center Aligned  | Right Aligned |
+    | :------------ |:---------------:| -------------:|
+    | col 3 is      | some wordy text |         $1600 |
+    | col 2 is      | centered        |           $12 |
+    | zebra stripes | are neat        |            $1 |
+
+Output:
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -------------:|
+| col 3 is      | some wordy text |         $1600 |
+| col 2 is      | centered        |           $12 |
+| zebra stripes | are neat        |            $1 |
+
+***
 
 ## Screenshot
 
 ![GFM Preview](https://github.com/vigo/textmate1-github-gfm-preview/raw/master/screenshot.png)
+
+## Todo
+
+* Syntax highlighting support
+* Vertical position matcher support
+
+
+## Change Log
+
+**2016-01-09**
+
+* changed: Right now, this is an individual command! Quit using Webpreview
+feature of TextMate1.
+
+**2015-11-25**
+
+* Added: `.rst` file support!
+* Removed: Buggy `scroll_to` thing. Will work on it later
+
+**2015-11-19**
+
+* First commit!
+
+***
 
 ## Credits
 
@@ -46,17 +135,3 @@ this mini bundle :)
 3. `commit` yours (`git commit -am 'added killer options'`)
 4. `push` your `branch` (`git push origin my-features`)
 5. Than create a new **Pull Request**!
-
----
-
-## Change Log
-
-**2015-11-25**
-
-* Added: `.rst` file support!
-* Removed: Buggy `scroll_to` thing. Will work on it later
-
-**2015-11-19**
-
-* First commit!
-
