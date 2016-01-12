@@ -10,15 +10,23 @@
 $HOME/.rbenv/shims/ruby -e '
 begin
   require "github/markup"
-  html = GitHub::Markup.render(ENV["TM_FILENAME"], File.read(ENV["TM_FILEPATH"]))
-  lines = html.split("\n")
-  current_line_number = ENV["TM_LINE_NUMBER"].to_i
-  puts lines.join("\n")
+  md_lines = []
+  File.readlines(ENV["TM_FILEPATH"]).each_with_index do |line, i|
+    ii = i + 1
+    output = line.chomp
+    if ii == ENV["TM_LINE_NUMBER"].to_i
+      output = "&lt;a id=\"scroll_here\"&gt;\n#{output}"
+    end
+    md_lines &lt;&lt; output
+  end
+
+  html = GitHub::Markup.render(ENV["TM_FILENAME"], md_lines.join("\n"))
+  puts html
+  puts "\n&lt;script&gt;window.location.hash = \"scroll_here\";&lt;/script&gt;"
 rescue LoadError =&gt; err
   puts "Error"
 end
 '
-
 echo '&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'</string>
 	<key>input</key>
 	<string>document</string>

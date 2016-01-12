@@ -100,10 +100,12 @@ Output:
 ## Todo
 
 * Syntax highlighting support
-* Vertical position matcher support
-
 
 ## Change Log
+
+**2016-01-12**
+
+* added: Vertical position matcher support
 
 **2016-01-09**
 
