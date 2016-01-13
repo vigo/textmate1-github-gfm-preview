@@ -11,15 +11,16 @@ $HOME/.rbenv/shims/ruby -e '
 begin
   require "github/markup"
   md_lines = []
+  rendered_current_line = ""
   File.readlines(ENV["TM_FILEPATH"]).each_with_index do |line, i|
     ii = i + 1
     output = line.chomp
     if ii == ENV["TM_LINE_NUMBER"].to_i
-      output = "&lt;a id=\"scroll_here\"&gt;\n#{output}"
+      rendered_current_line = GitHub::Markup.render("foo.md", output)
+      output = "&lt;a id=\"scroll_here\"&gt;#{rendered_current_line}"
     end
     md_lines &lt;&lt; output
   end
-
   html = GitHub::Markup.render(ENV["TM_FILENAME"], md_lines.join("\n"))
   puts html
   puts "\n&lt;script&gt;window.location.hash = \"scroll_here\";&lt;/script&gt;"
