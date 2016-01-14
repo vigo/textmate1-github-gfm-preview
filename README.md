@@ -11,19 +11,25 @@ You need to install [Rbenv](https://github.com/sstephenson/rbenv). Enable
 
 Then install require `gems`:
 
-    gem install github-markup redcarpet kramdown
+```bash
+gem install redcarpet pygments.rb
+```
 
 Also, for `rst` file support, you need python and `docutils` package. Please
 install `python` from `brew`
 
-    brew install python     # this will install pyton to /usr/local/bin/
-                            # this path will be added to $PATH
-    pip install docutils
+```bash
+brew install python     # this will install pyton to /usr/local/bin/
+                        # this path will be added to $PATH
+pip install docutils
+```
 
 ## Installation
 
-    cd "~/Library/Application Support/TextMate/Bundles/"
-    git clone https://github.com/vigo/textmate1-github-gfm-preview.git MarkdownPreview.tmbundle
+```bash
+cd "~/Library/Application Support/TextMate/Bundles/"
+git clone https://github.com/vigo/textmate1-github-gfm-preview.git .
+```
 
 Now you can hit `kntrl+alt+cmd+p`
 
@@ -97,11 +103,11 @@ Output:
 
 ![GFM Preview](https://github.com/vigo/textmate1-github-gfm-preview/raw/master/screenshot.png)
 
-## Todo
-
-* Syntax highlighting support
-
 ## Change Log
+
+**2016-01-14**
+
+* added: Syntax hightlighting support
 
 **2016-01-12**
 
