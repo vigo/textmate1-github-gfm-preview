@@ -23,7 +23,7 @@ install `python` from `brew`
 ## Installation
 
     cd "~/Library/Application Support/TextMate/Bundles/"
-    git clone https://github.com/vigo/textmate1-github-gfm-preview.git
+    git clone https://github.com/vigo/textmate1-github-gfm-preview.git MarkdownPreview.tmbundle
 
 Now you can hit `kntrl+alt+cmd+p`
 
