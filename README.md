@@ -105,6 +105,10 @@ Output:
 
 ## Change Log
 
+**2016-01-15**
+
+* fixed: Vertical position matcher support
+
 **2016-01-14**
 
 * added: Syntax hightlighting support

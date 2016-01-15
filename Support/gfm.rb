@@ -48,16 +48,21 @@ File.readlines(ENV["TM_FILEPATH"]).each_with_index do |line, i|
   ii = i + 1
   output = line.chomp
   if ii == ENV["TM_LINE_NUMBER"].to_i
-    output = "@@SCROLL_HERE@@\n\n#{output}"
+    output = "#{output}@@SCROLL_HERE@@"
   end
   md_lines << output
 end
 
-# html = markdown(md_lines.join("\n"))
+html = markdown(md_lines.join("\n"))
 
-html = markdown(md_lines.join("\n")).sub('<p>@@SCROLL_HERE@@</p>', "<br id=\"scroll_here\"/>")
+lines = html.split("\n")
+lines.each_with_index do |s, i|
+  if s =~ /@@SCROLL_HERE@@/
+    lines[i] = '<a id="scroll_here">' + s.sub('@@SCROLL_HERE@@', "")
+  end
+end
 
 puts html_header.join("")
-puts html
+puts lines.join("\n")
 puts html_footer.join("")
 
