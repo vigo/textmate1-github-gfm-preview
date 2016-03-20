@@ -142,7 +142,7 @@ feature of TextMate1.
 
 ## License
 
-This project licensed under MIT.
+This project is licensed under MIT.
 
 ***
 
