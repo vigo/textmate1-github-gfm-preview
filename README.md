@@ -4,16 +4,7 @@ You can preview markdown files as seen on [GitHub](http://github.com)!
 
 ## Requirements
 
-You need to install [Rbenv](https://github.com/sstephenson/rbenv). Enable
-`rbenv`, install any version of Ruby (*1.9+*). Activate your version;
-
-    rbenv global YOUR_VERSION
-
-Then install require `gems`:
-
-```bash
-gem install redcarpet pygments.rb
-```
+You need `Ruby` and `bundler` gem installed.
 
 Also, for `rst` file support, you need python and `docutils` package. Please
 install `python` from `brew`
@@ -28,10 +19,12 @@ pip install docutils
 
 ```bash
 cd "~/Library/Application Support/TextMate/Bundles/"
-git clone https://github.com/vigo/textmate1-github-gfm-preview.git .
+git clone https://github.com/vigo/textmate1-github-gfm-preview.git textmate1-github-gfm-preview.tmbundle
+cd textmate1-github-gfm-preview.tmbundle/
+bundle install --path=vendor/bundle
 ```
 
-Now you can hit `kntrl+alt+cmd+p`
+Now you can hit `kntrl + alt + cmd + p`
 
 ## Features
 
@@ -103,6 +96,10 @@ Output:
 
 ![GFM Preview](https://github.com/vigo/textmate1-github-gfm-preview/raw/master/screenshot.png)
 
+## Known Issue
+
+Vertical scroller (position matcher) is not working 100% as expected.
+
 ## Change Log
 
 **2016-01-15**
@@ -137,6 +134,18 @@ feature of TextMate1.
 
 * [GitHub CSS](https://github.com/sindresorhus/github-markdown-css)
 
+***
+
+## Contributer(s)
+
+* [Uğur "vigo" Özyılmazel][vigo] - Creator, maintainer
+
+## License
+
+This project licensed under MIT.
+
+***
+
 ## Contribute
 
 If you are still using **TextMate1** like me, please do not hesitate to contribute
@@ -147,3 +156,6 @@ this mini bundle :)
 3. `commit` yours (`git commit -am 'added killer options'`)
 4. `push` your `branch` (`git push origin my-features`)
 5. Than create a new **Pull Request**!
+
+
+[vigo]: http://ugur.ozyilmazel.com "Official Homepage"

@@ -5,7 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>$HOME/.rbenv/shims/ruby "$TM_BUNDLE_SUPPORT/gfm.rb"
+	<string>cd "$TM_BUNDLE_SUPPORT"
+$TM_RUBY "$TM_BUNDLE_SUPPORT/gfm.rb"
 </string>
 	<key>input</key>
 	<string>document</string>
