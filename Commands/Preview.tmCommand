@@ -18,7 +18,7 @@ $TM_RUBY "$TM_BUNDLE_SUPPORT/gfm.rb"
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>
-	<string>text.html.markdown</string>
+	<string>text.html.markdown,text.restructuredtext</string>
 	<key>uuid</key>
 	<string>5AA7D049-695F-4DF5-B312-2732BEBA76D9</string>
 </dict>
