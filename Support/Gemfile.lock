@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    github-markup (1.4.0)
     posix-spawn (0.3.11)
     pygments.rb (0.6.3)
       posix-spawn (~> 0.3.6)
@@ -12,8 +13,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  github-markup
   pygments.rb
   redcarpet
 
 BUNDLED WITH
-   1.11.2
+   1.12.5

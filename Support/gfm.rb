@@ -1,6 +1,8 @@
 require 'rubygems'
-require 'bundler/setup'
+require 'bundler'
 Bundler.require
+
+require 'github/markup'
 
 class HTMLwithPygments < Redcarpet::Render::HTML
   def block_code(code, language)
@@ -34,6 +36,7 @@ $filename = ENV['TM_FILENAME'] || "Preview"
 $file = ENV['TM_FILEPATH'] ? File.read(ENV["TM_FILEPATH"]) : STDIN.read
 
 
+
 html_header = [
   '<html>', '<head>', '<title>', $filename, '</title>',
   "<link rel=\"stylesheet\" href=\"file://#{css_file_github}\">",
@@ -48,6 +51,14 @@ html_footer = [
 ]
 
 rendered_markdown = markdown($file)
+
+if ENV['TM_SELECTED_FILE']
+  $filename = File.basename(ENV['TM_SELECTED_FILE'])
+  if File.extname($filename).downcase == '.rst'
+    rendered_markdown = GitHub::Markup.render($filename, $file)
+  end
+end
+
 puts html_header.join("")
 puts rendered_markdown
 puts html_footer.join("")
