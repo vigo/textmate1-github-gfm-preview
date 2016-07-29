@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
-	<string>saveActiveFile</string>
+	<string>nop</string>
 	<key>command</key>
 	<string>cd "$TM_BUNDLE_SUPPORT"
 PATH=$PATH:/usr/local/bin
